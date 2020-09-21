@@ -21,8 +21,6 @@
       />
       <input type="submit" :value="modeTitle" />
     </form>
-    <button @click="logout">Logout</button>
-    <p>{{ $store.state.user && $store.state.user.email }}</p>
   </div>
 </template>
 
@@ -45,9 +43,6 @@ export default {
         await auth.createUserWithEmailAndPassword(this.email, this.password);
       }
       this.$router.push("/");
-    },
-    logout() {
-      auth.signOut();
     }
   },
   computed: {

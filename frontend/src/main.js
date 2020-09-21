@@ -14,6 +14,9 @@ auth.onAuthStateChanged(user => {
     console.log("Logged out", user);
   }
   store.commit("SET_USER", user);
+  if (user) {
+    store.dispatch("bindPlants");
+  }
 });
 
 new Vue({
